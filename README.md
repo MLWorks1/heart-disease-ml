@@ -1,140 +1,49 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
-    .project-container {
-        font-family: 'Inter', sans-serif;
-        background: #0f172a;
-        padding: 40px;
-        border-radius: 20px;
-        color: #f8fafc;
-        max-width: 900px;
-        margin: 20px auto;
-        border: 1px solid #1e293b;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-
-    .header-title {
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #38bdf8;
-        margin-bottom: 30px;
-        font-weight: 600;
-        border-bottom: 2px solid #38bdf8;
-        display: inline-block;
-        padding-bottom: 5px;
-    }
-
-    .structure-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .folder-card {
-        background: #1e293b;
-        border-left: 5px solid #38bdf8;
-        padding: 20px;
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: default;
-    }
-
-    .folder-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
-        border-left-color: #f472b6;
-    }
-
-    .folder-icon {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .folder-name {
-        font-weight: 600;
-        color: #38bdf8;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-    }
-
-    .file-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0.9rem;
-        color: #94a3b8;
-    }
-
-    .file-item {
-        padding: 4px 0;
-        display: flex;
-        align-items: center;
-    }
-
-    .file-item::before {
-        content: "📄";
-        margin-right: 8px;
-        font-size: 0.8rem;
-    }
-
-    .tech-badge {
-        display: inline-block;
-        background: rgba(56, 189, 248, 0.1);
-        color: #38bdf8;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 0.7rem;
-        margin-top: 10px;
-        border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-</style>
-
-<div class="project-container">
-    <div style="text-align: center;">
-        <h2 class="header-title">Project Architecture</h2>
+<div style="direction: rtl; font-family: 'Segoe UI', Tahoma, sans-serif; background: #0f172a; padding: 40px; border-radius: 30px; color: #f8fafc; line-height: 1.6; max-width: 900px; margin: auto; border: 1px solid rgba(255, 255, 255, 0.1); shadow: 0 20px 50px rgba(0,0,0,0.5);">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h1 style="color: #fff; font-size: 2.5rem; text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff; margin-bottom: 10px;">ساختار پروژه پیش‌بینی بیماری قلبی</h1>
+        <div style="height: 4px; width: 100px; background: linear-gradient(90deg, #00d2ff, #9d50bb); margin: auto; border-radius: 10px;"></div>
     </div>
-    <div class="structure-grid">
-        <div class="folder-card">
-            <span class="folder-icon">📂</span>
-            <div class="folder-name">Data/</div>
-            <ul class="file-list">
-                <li class="file-item">raw_heart_disease.csv</li>
-                <li class="file-item">processed_features.pkl</li>
-                <li class="file-item">data_dictionary.md</li>
-            </ul>
-            <span class="tech-badge">Storage Layer</span>
+    <div style="background: rgba(255, 255, 255, 0.03); border: 2px solid #00d2ff; border-radius: 15px; padding: 20px; margin-bottom: 25px; box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);">
+        <span style="font-size: 1.2rem; font-weight: bold; color: #00d2ff;">📂 Heart-Disease-ML-Production/</span>
+    </div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">      
+      <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; border-right: 4px solid #00f2fe; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; color: #00f2fe; display: flex; align-items: center; gap: 10px;">📁 data/</h3>
+            <div style="color: #cbd5e1; font-size: 0.95rem;">
+                <p style="margin: 8px 0;">📄 heart_raw.csv</p>
+                <p style="margin: 8px 0;">📄 heart_engineered.csv</p>
+                <p style="margin: 8px 0; color: #64748b; font-size: 0.8rem;"># داده‌های خام و پردازش شده</p>
+            </div>
         </div>
-        <div class="folder-card" style="border-left-color: #a78bfa;">
-            <span class="folder-icon">📓</span>
-            <div class="folder-name" style="color: #a78bfa;">Notebooks/</div>
-            <ul class="file-list">
-                <li class="file-item">01_EDA_Exploration.ipynb</li>
-                <li class="file-item">02_Feature_Engineering.ipynb</li>
-                <li class="file-item">03_Model_Training.ipynb</li>
-            </ul>
-            <span class="tech-badge" style="color: #a78bfa; border-color: rgba(167, 139, 250, 0.2);">Research Lab</span>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; border-right: 4px solid #9d50bb; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; color: #9d50bb; display: flex; align-items: center; gap: 10px;">📁 notebooks/</h3>
+            <div style="color: #cbd5e1; font-size: 0.95rem;">
+                <p style="margin: 8px 0;">📓 01_EDA_Cleaning.ipynb</p>
+                <p style="margin: 8px 0;">📓 02_Feature_Engineering.ipynb</p>
+                <p style="margin: 8px 0;">📓 03_Model_Selection.ipynb</p>
+            </div>
         </div>
-        <div class="folder-card" style="border-left-color: #4ade80;">
-            <span class="folder-icon">⚙️</span>
-            <div class="folder-name" style="color: #4ade80;">Src/</div>
-            <ul class="file-list">
-                <li class="file-item">preprocessing_pipeline.py</li>
-                <li class="file-item">model_factory.py</li>
-                <li class="file-item">evaluation_metrics.py</li>
-            </ul>
-            <span class="tech-badge" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.2);">Core Logic</span>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; border-right: 4px solid #f9d423; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; color: #f9d423; display: flex; align-items: center; gap: 10px;">📁 models/</h3>
+            <div style="color: #cbd5e1; font-size: 0.95rem;">
+                <p style="margin: 8px 0;">📦 classifier_v1.pkl</p>
+                <p style="margin: 8px 0;">📦 scaler_pipeline.joblib</p>
+                <p style="margin: 8px 0;">📦 metrics_report.json</p>
+            </div>
         </div>
-        <div class="folder-card" style="border-left-color: #f472b6;">
-            <span class="folder-icon">🧠</span>
-            <div class="folder-name" style="color: #f472b6;">Models/</div>
-            <ul class="file-list">
-                <li class="file-item">adaboost_final.bin</li>
-                <li class="file-item">scaler_config.json</li>
-                <li class="file-item">ensemble_stack.joblib</li>
-            </ul>
-            <span class="tech-badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.2);">Production Artifacts</span>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; border-right: 4px solid #ff007a; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; color: #ff007a; display: flex; align-items: center; gap: 10px;">📁 src/</h3>
+            <div style="color: #cbd5e1; font-size: 0.95rem;">
+                <p style="margin: 8px 0;">🐍 preprocessing.py</p>
+                <p style="margin: 8px 0;">🐍 evaluation_metrics.py</p>
+                <p style="margin: 8px 0;">🐍 config.py</p>
+            </div>
         </div>
     </div>
+    <div style="margin-top: 30px; background: linear-gradient(90deg, rgba(0,210,255,0.1), rgba(157,80,187,0.1)); border-radius: 12px; padding: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+        <code style="color: #fff; margin: 0 15px;">📄 README.md</code> | 
+        <code style="color: #fff; margin: 0 15px;">📄 requirements.txt</code> | 
+        <code style="color: #fff; margin: 0 15px;">📄 LICENSE</code>
+    </div>
+
 </div>
