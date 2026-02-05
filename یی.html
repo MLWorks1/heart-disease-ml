@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>قلب 3D</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xffe6e6);
+
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // نور محیطی و نقطه‌ای
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const pointLight = new THREE.PointLight(0xffffff, 1);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+
+    // شکل قلب
+    const heartShape = new THREE.Shape();
+    heartShape.moveTo(0, 0);
+    heartShape.bezierCurveTo(0, 0, -1, 1.5, -2, 0.5);
+    heartShape.bezierCurveTo(-3, -0.5, -1.5, -3, 0, -1.5);
+    heartShape.bezierCurveTo(1.5, -3, 3, -0.5, 2, 0.5);
+    heartShape.bezierCurveTo(1, 1.5, 0, 0, 0, 0);
+
+    const extrudeSettings = {
+      steps: 2,
+      depth: 0.5,
+      bevelEnabled: true,
+      bevelThickness: 0.2,
+      bevelSize: 0.2,
+      bevelSegments: 2
+    };
+
+    const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
+    const material = new THREE.MeshPhongMaterial({ color: 0xff0000, shininess: 100 });
+    const heart = new THREE.Mesh(geometry, material);
+    scene.add(heart);
+
+    // چرخش قلب
+    function animate() {
+      requestAnimationFrame(animate);
+      heart.rotation.y += 0.01;
+      heart.rotation.x += 0.005;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
